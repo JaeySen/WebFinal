@@ -1,15 +1,54 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Log in</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  </head>
-  <body>
-    <h1>hello, world</h1>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  </body>
-</html>
+<?php
+include "includes/header.php";
+ ?>
+
+ <div class="container mt-5">
+   <?php if (isset($errors) && !empty($errors)): ?>
+     <div class="alert alert-danger" role="alert">
+       <?php foreach ($errors as $error): ?>
+         <?php echo $error . "</br>"; ?>
+       <?php endforeach; ?>
+     </div>
+   <?php endif; ?>
+   <div class="row">
+     <div class="col-md-6">
+       <h3><i class="fa fa-plus"></i> Create Account</h3>
+       <form class="" action="login.php" method="post">
+         <label for="username">Username</label>
+         <input type="text" name="username" class="form-control" placeholder="Input your username..." value="<?php if (isset($username)) {
+           echo htmlspecialchars($username);}?>">
+
+         <p class="error"><?php if(isset($errors['create_username'])) {echo $errors['create_username'];} ?></p>
+
+         <label for="email">Email</label>
+         <input type="email" name="email" class="form-control" placeholder="Input your username..." value="<?php if (isset($email)) { echo htmlspecialchars($email);} ?>">
+         <p class="error"><?php if(isset($errors['create_email'])) { echo $errors['create_email'];} ?></p>
+         <label for="password1">Password</label>
+         <input type="password" name="password1" class="form-control" placeholder="Input your username..."value="">
+         <p class="error"></p>
+         <label for="password2">Confirm Password</label>
+         <input type="password" name="password2" class="form-control" placeholder="Input your username..."value="">
+         <p class="error"><?php if(isset($errors['create_password'])) { echo $errors['create_password'];} ?></p>
+         <button type="submit" name="create" class="btn btn-outline-success">Create Account</button>
+       </form>
+     </div>
+     <div class="col-md-6">
+       <h3><i class="fa fa-user"></i> Login</h3>
+       <form class="" action="login.php" method="post">
+         <label for="username">Username</label>
+         <input type="text" name="username" class="form-control" placeholder="Enter your name...">
+         <p class="error error-username"></p>
+         <label for="password">Password</label>
+         <input type="password" name="password" class="form-control" placeholder="...">
+         <p class="error error-password"></p>
+         <button type="submit" name="login" class="btn btn-block btn-success"><i class="fa fa-user"></i> Login</button>
+       </form>
+     </div>
+   </div>
+ </div>
+
+
+
+ <?php
+include "includes/footer.php";
+  ?>

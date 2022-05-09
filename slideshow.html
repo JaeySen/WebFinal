@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Slideshow</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="slideshow.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Grandstander&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-light bg-orange fixed-top">
+    <a href="index.html" class="navbar-brand">
+        <img src="images/logo_transparent.png" alt="logo">
+        PollGenZ
+      </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link grow" href="index.html">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link grow" href="trending2.html">Trending</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link grow" href="about.html">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="jumbotron-fluid d-flex align-items-center">
+    <div class="container">
+      <h1 class="display-2 text-center" id="qes"> </h1>
+      <div class="container bg-white shadow-lg w-50" id="slideshow">
+        <!-- poll's showdown load from slide.js -->
+      </div>
+    </div>
+  </div>
+
+  <div class="container bg-white shadow-lg my-5 comment-container">
+    <div class="container row pt-3 pb-3" id="comment">
+      <!--commmet load from slide.js -->
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="page-footer bg-lemon text-dark">
+    <div class="bg-orange">
+      <div class="container">
+        <div class="row py-4 d-flex align-items-center">
+          <div class="col-md-12 text-center">
+            <a href="#"><i class="fab fa-facebook-f mr-4 text-dark grow"></i></a>
+            <a href="#"><i class="fab fa-twitter mr-4 text-dark grow"></i></a>
+            <a href="#"><i class="fab fa-instagram mr-4 text-dark grow"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container text-center text-md-left mt-5">
+      <div class="row">
+        <div class="col-md-3 mx-auto mb-4">
+          <h6 class="text-uppercase font-weight-bold ">Poll Generator Z</h6>
+          <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
+          <p class="mt-2 ">A Web Dev Project from ITEC ft. Mr Spencer
+          </p>
+        </div>
+
+        <div class="col-md-3 mx-auto mb-4">
+          <h6 class="text-uppercase font-weight-bold ">Contact Us</h6>
+          <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto">
+          <ul class="list-inline">
+            <li class="list-inline-item">Hien Long</li>
+            <li class="list-inline-item">Anh Thu</li>
+            <li class="list-inline-item">Minh Quang</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+  <script src="slide.js"></script>
+</body>
+</html>

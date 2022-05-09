@@ -1,0 +1,13 @@
+nav{
+  background: #198754;
+}
+.jumbotron-fluid{
+  height:50vh;
+  background: #5ac08e;
+
+  /* min-height: 100%; */
+  /* min-height: 100vh; */
+
+  display: flex;
+  align-items: center;
+}

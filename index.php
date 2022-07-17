@@ -42,7 +42,7 @@ include "includes/header.php";
   </div>
 
 
-    <script src="main.js"></script>
+  <script src="main.js"></script>
 <?php
 include "includes/footer.php";
  ?>

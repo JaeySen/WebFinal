@@ -1,0 +1,13 @@
+body {
+	height: 100vh;
+	font-family: 'Grandstander', cursive;
+}
+
+
+.bg-orange {
+	background-color: #fa9f42;
+}
+
+.bg-lemon {
+	background-color: #f7fe72;
+}

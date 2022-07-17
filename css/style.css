@@ -1,15 +1,7 @@
-/* css style here */
 body {
 	overflow-x: hidden; /*so things still stay within browser window*/
 	height:100vh;
 	font-family: 'Grandstander', cursive;
-}
-
-/* for typography */
-h1,
-h2,
-h3,
-p {
 }
 
 #banner {
@@ -18,55 +10,11 @@ p {
 	padding-top:23vh;
 }
 
-/* .space {
-	height:10vh;
-} */
-
-hr {
-	width:150px;
-	height:2px;
-}
-
-/* for navbar */
-.navbar {
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 1.2rem;
-	letter-spacing: 0.1rem;
-}
-
-.nav-item.active {
-	text-decoration: underline;
-}
-
-/*navbar brand will edit later if having image*/
-.navbar-brand img {
-	height: 2.8rem;
-	width: auto;
-}
-.navbar li {
-	padding-right: 0.7rem;
-}
-
-/*adding hover prop for li item in navbar */
-.navbar-dark .navbar-nav .nav-link.active,
-.navbar-dark .navbar-nav .nav-link:hover {
-	/*change the color for hover prop*/
-}
-
 /* for carousel */
 .carousel-item {
 	height: 50vh;
 }
 
-.bg-orange {
-	background-color: #fa9f42;
-}
-
-
-.bg-lemon {
-	background-color: #f7fe72;
-}
 
 .banner {
 	background: no-repeat center center fixed;

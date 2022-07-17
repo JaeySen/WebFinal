@@ -33,17 +33,3 @@ submit.addEventListener("click", function (e) {
 	localStorage.setItem("array", JSON.stringify(array));
 });
 
-//basic ultilities may be needed
-function fadeIn(el) {
-	el.style.display = "initial";
-	setTimeout(function () {
-		el.style.opacity = "1";
-	}, 10);
-}
-
-function fadeOut(el) {
-	el.style.opacity = "0";
-	setTimeout(function () {
-		el.style.display = "none";
-	}, 10);
-}

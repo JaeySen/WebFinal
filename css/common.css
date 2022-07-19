@@ -1,8 +1,8 @@
 body {
 	height: 100vh;
 	font-family: 'Grandstander', cursive;
+	/* overflow-x: hidden; */
 }
-
 
 .bg-orange {
 	background-color: #fa9f42;

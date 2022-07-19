@@ -22,8 +22,9 @@
 
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/button.css">
 
-  <title>A Fun Poll Generator</title>
+  <title>Poll Generator Z</title>
 </head>
 
 <body>

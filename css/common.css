@@ -1,7 +1,6 @@
 body {
-	height: 100vh;
+	min-height: 120vh;
 	font-family: 'Grandstander', cursive;
-	/* overflow-x: hidden; */
 }
 
 .bg-orange {
@@ -10,4 +9,10 @@ body {
 
 .bg-lemon {
 	background-color: #f7fe72;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }

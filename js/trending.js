@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded",function(){
   spinner.style.display = "none";
   setTimeout(function(){
     spinner.style.display = "block";
-  }3000);
+  },3000);
 })
 function scrollFunction() {
 	if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {

@@ -11,8 +11,12 @@ include "includes/header.php";
           <input type="text" class="form-control" id="formGroupExampleInput0">
         </div>
         <div class="form-group py-3">
-          <label for="formGroupExampleInput1">Pell</label>
+          <label for="formGroupExampleInput1">Pell 1</label>
           <input type="text" class="form-control" id="formGroupExampleInput1">
+        </div>
+        <div class="form-group py-3">
+          <label for="formGroupExampleInput2">Pell 2</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2">
         </div>
         <!--new input box will be inserted below here-->
       </form>
@@ -24,7 +28,7 @@ include "includes/header.php";
         <button class="btn shiny grow" id="more" href="#" role="button">More Pell</button>
       </div>
       <div class="p-2 bd-highlight">
-        <button class="btn shiny grow">Renew Poll</button>
+        <button class="btn shiny grow" role="button" href="#">Renew Poll</button>
       </div>
       <div class="p-2 bd-highlight">
         <button type="submit" class="btn submit shiny grow">Poll it!</button>

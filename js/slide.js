@@ -7,7 +7,6 @@ let qes = document.querySelector("#qes");
 
 document.addEventListener("DOMContentLoaded", function () {
 	// e.preventDefault();
-	console.log("laod");
 	console.log(storedArr);
 	let s = document.createTextNode(`${storedArr[0]}`);
 	qes.appendChild(s);

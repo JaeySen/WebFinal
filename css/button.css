@@ -1,8 +1,10 @@
-#more {
+button {
 	position: relative;
-	border-color: #c46e72;
 	overflow: hidden;
-	margin-right: 1.8rem;
+}
+
+#more {
+	border-color: #c46e72;
 }
 
 #more:hover {
@@ -10,19 +12,26 @@
 	color: white;
 }
 
-.submit {
-	position: relative;
-	border-color: #731dd8;
-	overflow: hidden;
+#renew {
+	border-color: #23d18b;
 }
 
-.submit:hover {
+#renew:hover {
+	background: #23d18b;
+	color:white;
+}
+
+#submit {
+	border-color: #731dd8;
+}
+
+#submit:hover {
 	background: #731dd8;
 	color: white;
 }
 
 .shiny::before {
-	content: "";
+	content: "helo";
 	position: absolute;
 	top: 0;
 	left: -100%;

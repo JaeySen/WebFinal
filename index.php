@@ -3,7 +3,7 @@ include "includes/header.php";
 ?>
 
   <!-- Poll Form -->
-  <div class="container-sm p-5">
+  <div class="container-sm p-5" id="poll-form">
     <div class="row">
       <form action="slideshow.php" method="post">
         <div class="form-group py-3">
@@ -25,13 +25,13 @@ include "includes/header.php";
 
     <div class="d-flex justify-content-between bd-highlight mb-2">
       <div class="p-2 bd-highlight">
-        <button class="btn shiny grow" id="more" href="#" role="button">More Pell</button>
+        <button class="grow" id="more" role="button" href="#" >More Pell</button>
       </div>
       <div class="p-2 bd-highlight">
-        <button class="btn shiny grow" role="button" href="#">Renew Poll</button>
+        <button class="grow" id="renew" role="button" href="#">Renew Poll</button>
       </div>
       <div class="p-2 bd-highlight">
-        <button type="submit" class="btn submit shiny grow">Poll it!</button>
+        <button class="submit grow" type="submit" id="submit">Poll it!</button>
       </div>   
     </div>
   </div>

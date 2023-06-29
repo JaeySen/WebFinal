@@ -1,0 +1,119 @@
+body {
+	overflow: initial !important;
+	font-family: 'Grandstander', cursive;
+}
+
+#banner {
+	padding-top: 18vh !important;
+	margin-bottom: 0;
+}
+
+#banner > .display-4 {
+    color: white;
+}
+
+.container-form {
+	background-color: white;
+	border-radius: 15px;
+	position: relative;
+	width: 40%;
+	left: 30%;
+}
+
+.poll-answers {
+    height: 20vh;
+    display: flex;
+    flex-direction: column-reverse;
+}
+/* ::-webkit-scrollbar-thumb {
+    background: rgb(150, 150, 150);
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+} */
+
+@media only screen and (max-width: 1200px) {
+    .container-form {
+        width: 60%;
+        left: 20%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .container-form {
+        width: 80%;
+        left: 10%;
+    }
+}
+
+.bg-orange {
+	background-color: #fa9f42;
+}
+
+.bg-lemon {
+	background-color: #f7fe72;
+}
+
+.navbar {
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 1.2rem;
+	letter-spacing: 0.1rem;
+}
+
+.navbar-brand img {
+	height: 2.8rem;
+	width: auto;
+}
+
+.nav-item.active {
+	text-decoration: underline;
+}
+
+.navbar li {
+	padding-right: 0.7rem;
+}
+
+.divider {
+    width: auto;
+}
+
+hr {
+	width:150px;
+	height:2px;
+}
+
+#banner {
+    background: #198754;
+    height: 80vh;
+    padding: 10vh;
+}
+
+.container .fab {
+	font-size: 3rem;
+	padding-right: 1.8rem;
+}
+
+#more {
+	position: relative;
+	border-color: #c46e72;
+	/* overflow: hidden; */
+	margin-right: 1.8rem;
+}
+
+#more:hover {
+	background: #c46e72;
+	color: white;
+}
+
+.submit {
+	position: relative;
+	border-color: #731dd8;
+	/* overflow: hidden; */
+}
+
+.submit:hover {
+	background: #731dd8;
+	color: white;
+}

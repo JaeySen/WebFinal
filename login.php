@@ -1,8 +1,12 @@
 <?php
 include "includes/header.php";
  ?>
+  <link rel="stylesheet" href="login.css">
+<?php
+include "includes/navbar.php";
+?>
 
- <div class="container mt-5">
+ <div id="banner" class="container-fluid">
    <?php if (isset($errors) && !empty($errors)): ?>
      <div class="alert alert-danger" role="alert">
        <?php foreach ($errors as $error): ?>

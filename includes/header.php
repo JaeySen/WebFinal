@@ -1,60 +1,36 @@
 <?php ?>
-<!doctype html>
-<html lang="en">
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Trending - PollGenZ</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  
-  <!-- font awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+      <!-- bootstrap -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Grandstander&display=swap" rel="stylesheet">
+      <!-- font awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
-  <!-- <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/slideshow.css"> -->
+        <!-- google font -->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Grandstander&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./css/header.css">
-  <link rel="stylesheet" href="./css/common.css">
-  <link rel="stylesheet" href="./css/button.css">
+      <!-- owl carousel's css -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="crossorigin="anonymous" />
 
-  <title>Poll Generator Z</title>
-</head>
+      <!-- style -->
+      
+      
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="css/state.css">
+      <link rel="icon" href="../images/logo_transparent.png" type="image/x-icon">
 
-<body>
-  <header>
-    <nav class="navbar navbar-expand-md navbar-light bg-orange">
-        <a href="index.php" class="navbar-brand">
-          <img src="images/logo_transparent.png" alt="logo">
-          PollGenZ
-        </a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navigation">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item <?php if($_SERVER['PHP_SELF'] = "../index.php"){echo "active";} ?>">
-              <a class="nav-link grow" href="index.php">Home</a>
-            </li>
-            <li class="nav-item <?php if($_SERVER['PHP_SELF'] = "../trending2.php"){echo "active";} ?>">
-              <a class="nav-link grow" href="trending2.php">Trending</a>
-            </li>
-            <li class="nav-item <?php if($_SERVER['PHP_SELF'] = "../about.php"){echo "active";} ?>">
-              <a class="nav-link grow" href="about.php">About</a>
-            </li>
-            <li class="nav-item <?php if($_SERVER['PHP_SELF'] = "../login.php"){echo "active";} ?>">
-              <a class="nav-link grow" href="login.php">Login</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-  </header>
+      <!-- <link rel="stylesheet" href="./css/header.css">
+      <link rel="stylesheet" href="./css/common.css">
+      <link rel="stylesheet" href="./css/button.css"> -->

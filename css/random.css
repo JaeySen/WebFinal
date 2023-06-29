@@ -1,0 +1,29 @@
+
+.container .fab {
+	font-size: 3rem;
+	padding-right: 1.8rem;
+}
+
+.ttt {
+  text-decoration: none !important;
+}
+
+.container-form {
+  padding-left: 0 !important;
+}
+
+#more {
+  margin-left: 23px;
+}
+
+.poll-answer, #poll-question {
+  border-style: groove;
+  border-color: black;
+  border-radius: 12px;
+  margin: 20px 10px;
+  position: relative;
+  width: 80%;
+  left: 10%;
+  height: calc(1.5em + .75rem + 2px);
+}
+

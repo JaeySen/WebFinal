@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="css/style.css">
-
 <div id="banner" class="jumbotron text-center">
   <div class="display-4 mb-4">Create a Poll in Seconds!</div>
   <div class="container-form p-4" id="form">

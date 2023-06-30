@@ -1,3 +1,7 @@
+<?php 
+  // header("Location: /pollgenz-php/latest");
+?>
+
 <div id="banner" class="jumbotron-fluid text-center">
     <div class="display-4 mb-4">Latest polls !</div>
     <div class="container">

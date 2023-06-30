@@ -24,12 +24,12 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="crossorigin="anonymous" />
 
       <!-- style -->
-      
-      
-      <link rel="stylesheet" href="css/base.css">
-      <link rel="stylesheet" href="css/state.css">
       <link rel="icon" href="../../images/logo_transparent.png" type="image/x-icon">
 
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="css/state.css">
+      <link rel="stylesheet" href="css/style.css">
       <!-- <link rel="stylesheet" href="./css/header.css">
       <link rel="stylesheet" href="./css/common.css">
       <link rel="stylesheet" href="./css/button.css"> -->
+  </head>

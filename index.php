@@ -1,14 +1,8 @@
 <?php 
 
 require 'functions.php';
-// dd($_SERVER);
-$root = $_SERVER['REQUEST_URI'];
-// $req_pg = basename($root);
-$req_pg = explode(basename($root), $root);
-  echo "<script>console.log('Debug Objects: " . $root . " then " . $req_pg[0] . "' );</script>";
 
-// include "views/includes/header.php";
-// include "views/includes/navbar.php";
+$root = '/pollgenz-php';
 
 $to_route =
 [

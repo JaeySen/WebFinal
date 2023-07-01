@@ -28,7 +28,11 @@
 
       <link rel="stylesheet" href="css/base.css">
       <link rel="stylesheet" href="css/state.css">
-      <link rel="stylesheet" href="css/style.css">
+
+      <?php if ($heading == 'Home'){ echo '<link rel="stylesheet" href="css/style.css">'; }?>
+      <?php if ($heading == 'Latest'){ echo '<link rel="stylesheet" href="css/latest.css">'; }?>
+      <?php if ($heading == 'Random'){ echo '<link rel="stylesheet" href="css/random.css">'; }?>
+      <?php if ($heading == 'Trending'){ echo '<link rel="stylesheet" href="css/trending.css">'; }?>
       <!-- <link rel="stylesheet" href="./css/header.css">
       <link rel="stylesheet" href="./css/common.css">
       <link rel="stylesheet" href="./css/button.css"> -->

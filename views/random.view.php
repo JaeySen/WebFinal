@@ -1,13 +1,3 @@
-<?php
-include "includes/header.php";
-?>
-
-<link rel="stylesheet" href="css/random.css">
-
-<?php
-include "includes/navbar.php";
-?>
-
 <div id="banner" class="jumbotron text-center">
     <div class="display-4 mb-4" >Answer the poll !</div>
     <div class="container-form p-4">
@@ -36,7 +26,3 @@ include "includes/navbar.php";
 </div>
 
 <script type="text/javascript" src="js/random.js"></script>
-
-<?php
-include "includes/footer.php";
-?>

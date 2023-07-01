@@ -21,9 +21,9 @@ body {
 }
 
 .poll-answers {
-    height: 20vh;
+    height: 25vh;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 /* ::-webkit-scrollbar-thumb {
     background: rgb(150, 150, 150);

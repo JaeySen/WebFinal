@@ -64,7 +64,7 @@ more.addEventListener("click", function (e) {
 		"'>";
 	console.log("now u have " + i + " option");
 	let where = document.querySelector("div.poll-answers");
-	where.prepend(newinput);
+	where.append(newinput);
 });
 
 
@@ -78,10 +78,20 @@ submit.addEventListener("click", function (e) {
 	// 	$(this).toggleClass('hover');
 	// });
 	// window.location.href = "slideshow.html";
-	// for (var j = 0; j <= i; j++) {
-	// 	array.push(document.querySelector("#formGroupExampleInput" + j).value);
-	// }
-	// localStorage.setItem("array", JSON.stringify(array));
+	for (var j = 1; j <= i; j++) {
+		array.push(document.querySelector("#answer" + j).value);
+	}
+	localStorage.setItem("array", JSON.stringify(array));
+
+	answers = document.getElementsByClassName('answer-card');
+
+	setTimeout(function(){
+		for (let k in answers){
+			if (k == parseInt(k, 10)) {
+				answers[k].style.visibility = 'visible';
+			}
+		}
+	}, 2000);
 });
 
 let flip_back_btn = document.querySelector(".btn.flip-back");

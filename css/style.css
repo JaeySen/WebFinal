@@ -65,6 +65,14 @@ hr {
 	width: 100%;
   }
 
+
+.answer-card {
+	visibility: hidden;
+}
+
+/* .answers-zone {
+	overflow: visible;
+} */
 /* for carousel */
 /* .carousel-item {
 	height: 50vh;

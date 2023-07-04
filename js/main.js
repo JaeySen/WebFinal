@@ -1,103 +1,83 @@
-// let moreBtn = document.querySelector("#more");
-// let submit = document.querySelector("#submit");
-// let renewBtn = document.querySelector("#renew");
-// var i = 2;
-
-// let poll_form = document.querySelector("#poll-form");
-
-// document.body.style.overflow = "hidden";
-// moreBtn.addEventListener("click", function(e) {
-// 	e.preventDefault();
-// 	console.log("more clicked");
-// 	let newinput = document.createElement("div");
-// 	newinput.setAttribute("class", "form-group py-4");
-// 	i += 1;
-// 	newinput.innerHTML =
-// 		"<label for='formGroupExampleInput" +
-// 		i +
-// 		"'>Pell " +
-// 		i +
-// 		"</label><input type='text' class='form-control' id='formGroupExampleInput" +
-// 		i +
-// 		"'>";
-// 	console.log("now u have " + i + " pells");
-// 	let where = document.querySelector("form");
-// 	where.append(newinput);
-
-// 	poll_form.animate({'height': '+=5vh'});
-// });
-
-// renewBtn.addEventListener("click", function(e){
-// 	e.preventDefault();
-	
-// })
-
-
-
-
-// //collect input's value, push into array
-// //array[0] is the poll's question
-// submit.addEventListener("click", function (e) {
-// 	e.preventDefault();
-// 	window.location.href = "slideshow.php";
-// 	let array = [];
-// 	for (var j = 0; j <= i; j++) {
-// 		array.push(document.querySelector("#formGroupExampleInput" + j).value);
-// 	}
-// 	localStorage.setItem("array", JSON.stringify(array));
-// });
-
 let more = document.querySelector("#more");
 let submit = document.querySelector(".btn.submit");
 var i = 4;
-let array = [];
+let data = [];
 
-more.addEventListener("click", function (e) {
-	e.preventDefault();
+document.addEventListener("DOMContentLoaded", function(e) {
 
-	let newinput = document.createElement("div");
-	newinput.classList.add("form-group");
-	i += 1;
-	newinput.innerHTML =
-		"<input type='text' class='form-control' id='answer" +
-		i +
-		"'>";
-	console.log("now u have " + i + " option");
-	let where = document.querySelector("div.poll-answers");
-	where.append(newinput);
-});
+	more.addEventListener("click", function (e) {
+		e.preventDefault();
+	
+		let newinput = document.createElement("div");
+		newinput.classList.add("form-group");
+		i += 1;
+		newinput.innerHTML =
+			"<input type='text' class='form-control' id='answer" +
+			i +
+			"'>";
+		console.log("now u have " + i + " option");
+		let where = document.querySelector("div.poll-answers");
+		where.append(newinput);
+	});
+	
 
+	//collect input's value, push into array
+	//array[0] is the poll's question
 
-//collect input's value, push into array
-//array[0] is the poll's question
-submit.addEventListener("click", function (e) {
-	e.preventDefault();
-	$(".container-form").toggleClass('hover')
-	// document.getElementById("form").classList.add("form-finished")
-	// $(document).on("click", ".flip-container", function () {
-	// 	$(this).toggleClass('hover');
-	// });
-	// window.location.href = "slideshow.html";
-	for (var j = 1; j <= i; j++) {
-		array.push(document.querySelector("#answer" + j).value);
-	}
-	localStorage.setItem("array", JSON.stringify(array));
+	const flipPoll = new MutationObserver(entries => {
+		console.log(entries)
+	})
 
-	answers = document.getElementsByClassName('answer-card');
+	flipPoll.observe(submit, { childList: true })
+	submit.addEventListener("click", function (e) {
+		e.preventDefault();
+		$(".container-form").toggleClass('hover')
+		// document.getElementById("form").classList.add("form-finished")
+		// $(document).on("click", ".flip-container", function () {
+		// 	$(this).toggleClass('hover');
+		// });
+		// window.location.href = "slideshow.html";
+		// for (var j = 1; j <= i; j++) {
+		// 	data.push(document.querySelector("#answer" + j).value);
+		// }
+		// localStorage.setItem("array", JSON.stringify(array));
 
-	setTimeout(function(){
-		for (let k in answers){
-			if (k == parseInt(k, 10)) {
-				answers[k].style.visibility = 'visible';
+		answers = document.getElementsByClassName('answer-card');
+		questionDisplay = document.querySelector('#question-display');
+
+		setTimeout(function(){
+			for (let k in answers){
+				if (k == parseInt(k, 10)) {
+					k = parseInt(k, 10)
+					answers[k].innerHTML = document.querySelector("#answer" + (k + 1)).value;
+					answers[k].style.visibility = 'visible';
+				};
 			}
-		}
-	}, 2000);
-});
+			console.log(questionDisplay)
+			questionDisplay.textContent = document.querySelector('#question').value;
+		}, 2000);
 
-let flip_back_btn = document.querySelector(".btn.flip-back");
-flip_back_btn.addEventListener("click", function(e) {
-	$(".container-form").toggleClass('hover')
+		// let targetNode = document.querySelector("")
+	});
+
+	let resetBtn = document.getElementById("reset");
+
+	resetBtn.addEventListener("click", function(e) {
+		console.log("reset Clicked")
+	})
+
+
+	let flip_back_btn = document.querySelector(".btn.flip-back");
+	flip_back_btn.addEventListener("click", function(e) {
+		$(".container-form").toggleClass('hover')
+	})
 })
+
+
+
+
+
+
 
 //basic ultilities may be needed
 function fadeIn(el) {

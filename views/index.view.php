@@ -56,25 +56,25 @@
               <a href="#!" class="card-link">Another link</a>
             </div>
           </div> -->
-          <div class="container d-flex flex-column border border-dark">
+          <div class="container d-flex flex-column border border-dark" id="question-display">
             Question
             <div class="row d-flex justify-content-center">
               <div class="col-6 border border-dark answer-card">Answer 1</div>
               <div class="col-6 border border-dark answer-card">Answer 2</div>
             </div>
-            <!-- <div class="row d-flex justify-content-center">Question</div> -->
             <div class="row d-flex justify-content-center">
               <div class="col-6 border border-dark answer-card">Answer 3</div>
               <div class="col-6 border border-dark answer-card">Answer 4</div>
             </div>
           </div>
+
         </div>
 
 
         <div class="container pt-3 pl-3">          
           <div class="row align-self-end justify-content-between">
-            <a class="btn shiny grow" id="more" href="#" role="button">See Poll</a>
-            <a class="btn submit flip-back shiny grow" href="#" role="button">New poll</a>
+            <a class="btn shiny grow" id="" href="#" role="button">See Poll</a>
+            <a class="btn submit flip-back shiny grow" id="reset" href="#" role="button">New poll</a>
           </div>
         </div>
 
@@ -95,5 +95,5 @@
 </div>
 
 
-<script type="text/javascript" src="js/main.js"></script>
+
 

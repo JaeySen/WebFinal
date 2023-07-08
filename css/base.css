@@ -95,14 +95,14 @@ hr {
 	padding-right: 1.8rem;
 }
 
-#more {
+.btn-custom-red {
 	position: relative;
 	border-color: #c46e72;
 	/* overflow: hidden; */
 	margin-right: 1.8rem;
 }
 
-#more:hover {
+.btn-custom-red:hover {
 	background: #c46e72;
 	color: white;
 }

@@ -52,6 +52,7 @@
     crossorigin="anonymous"></script>
 
     <?php if ($heading == 'Home'){ echo '<script type="text/javascript" src="js/main.js"></script>'; }?>
+    <?php if ($heading == 'Random'){ echo '<script type="text/javascript" src="js/random.js"></script>'; }?>
 
   </body>
 </html>

@@ -19,10 +19,8 @@
     </div>
 
     <div class="container pt-3 px-0 d-flex justify-content-between" style="width:80%">
-        <a class="btn shiny grow" id="more" href="#" role="button">Submit</a>
+        <!-- <a class="btn shiny grow" id="more" href="#" role="button">Submit</a> -->
         <button type="submit" class="btn submit shiny grow">Next poll</button>
     </div>
     </div>
 </div>
-
-<script type="text/javascript" src="js/random.js"></script>

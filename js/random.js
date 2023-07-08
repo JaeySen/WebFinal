@@ -1,33 +1,25 @@
-const init = [
-    [
-      'a or b ?',
-      'a',
-      'b',
-      
-    ],
-    [
-      'c, d?',
-      'c',
-      'd'
-    ],
-    [
-      'e, f?',
-      'e',
-      'f'
-    ]
-  ]
   
-  
-  const static_polls = [
-    {
-      question: 'Are you gay?',
-      answer: ['yes', 'no', 'yes but no', 'no but yes']
-    },
-    {
-      question: 'Are you les?',
-      answer: ['yes', 'no', 'yes but no', 'no but yes']
-    }
-  ]
+const static_polls = [
+  {
+    question: 'Are you gay?',
+    answer: ['yes', 'no', 'yes but no', 'no but yes']
+  },
+  {
+    question: 'Are you les?',
+    answer: ['yes', 'no', 'yes but no', 'no but yes']
+  }
+]
+
+// const static_polls_1 = [
+//   [
+//     question: 'Are you gay?',
+//     answer: ['yes', 'no', 'yes but no', 'no but yes']
+//   ],
+//   [
+//     question: 'Are you les?',
+//     answer: ['yes', 'no', 'yes but no', 'no but yes']
+//   ]
+// ]
   // document.body.style.overflow = "hidden";
   //Get the button:
   // mybutton = document.getElementById("myBtn");
@@ -83,13 +75,26 @@ const init = [
   // exec();
   let question = document.getElementById("poll-question")
   let answer = document.getElementsByClassName("poll-answer")
+  var pollData = JSON.parse(localStorage.getItem("data")); 
   document.addEventListener("DOMContentLoaded", function () {
-    const poll = static_polls[Math.floor(Math.random() * static_polls.length)]
+    let poll = {}
+    if (!pollData) {
+      poll = static_polls[Math.floor(Math.random() * static_polls.length)]
+
+    } else {
+      let answer = pollData.toSpliced(0, 1)
+      poll = {
+        question: pollData[0],
+        answer: answer
+      }
+    }
     question.innerHTML = poll.question;
     for (let [key, value] of Object.entries(answer)) {
       value.innerHTML = poll.answer[key]
     }
+
   })
+
   
   // let where = document.getElementsByClassName("ttt");
   // document.addEventListener("DOMContentLoaded",function(){

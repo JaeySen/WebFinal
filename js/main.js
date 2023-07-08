@@ -43,19 +43,19 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		// localStorage.setItem("array", JSON.stringify(array));
 
 		answers = document.getElementsByClassName('answer-card');
-		questionDisplay = document.querySelector('#question-display');
+		// questionDisplay = document.querySelector('#question-display');
 
-		setTimeout(function(){
-			for (let k in answers){
-				if (k == parseInt(k, 10)) {
-					k = parseInt(k, 10)
-					answers[k].innerHTML = document.querySelector("#answer" + (k + 1)).value;
-					answers[k].style.visibility = 'visible';
-				};
-			}
-			console.log(questionDisplay)
-			questionDisplay.textContent = document.querySelector('#question').value;
-		}, 2000);
+		// setTimeout(function(){
+		// 	for (let k in answers){
+		// 		if (k == parseInt(k, 10)) {
+		// 			k = parseInt(k, 10)
+		// 			answers[k].innerHTML = document.querySelector("#answer" + (k + 1)).value;
+		// 			answers[k].style.visibility = 'visible';
+		// 		};
+		// 	}
+		// 	console.log(questionDisplay)
+		// 	questionDisplay.textContent = document.querySelector('#question').value;
+		// }, 2000);
 
 		// let targetNode = document.querySelector("")
 	});
@@ -74,7 +74,22 @@ document.addEventListener("DOMContentLoaded", function(e) {
 })
 
 
+function presentPoll() {
+    location.assign("random");
 
+	// for (let k in answers){
+	// 	if (k == parseInt(k, 10)) {
+	// 		k = parseInt(k, 10)
+	// 		answers[k].innerHTML = document.querySelector("#answer" + (k + 1)).value;
+	// 		answers[k].style.visibility = 'visible';
+	// 	};
+	// }
+	data.push(document.querySelector("#question").value);
+	for (var j = 1; j <= i; j++) {
+		data.push(document.querySelector("#answer" + j).value);
+	}
+	localStorage.setItem("data", JSON.stringify(data));
+}
 
 
 

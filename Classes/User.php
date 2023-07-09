@@ -1,7 +1,7 @@
 <?php
+// include 'db/db.php';
 
 class User {
-
   public $user_id;
   public $user_name;
   public $user_email;
@@ -12,40 +12,48 @@ class User {
   public $users = [];
   public $errors = [];
 
-  public function __construct($conn) {
+  private $data; 
+
+  public function __construct($conn, $post_data) {
     $this->conn = $conn;
+    $this->data = $post_data;
   }
 
-  public function getUsername() {
+  private function addError($key, $val) {
+    $this->errors[$key] = $val;
+  }
+
+  private function getUser() {
     $sql = "SELECT * FROM users WHERE user_name = ?";
     $stmt = $this->conn->prepare($sql);
-    $stmt->bind_param("s", $this->user_name);
+    $stmt->bind_param("s", $this->data['username']);
     $stmt->execute();
     $results = $stmt->get_result();
     if($results->num_rows == 1) {
-      $this->user = $results->fetch_assoc();
+      // $this->user = $results->fetch_assoc();
+      return $results->fetch_assoc();
     }
   }
 
-  public function checkLogin($user_name, $password) {
-    $this->user_name = $user_name;
-    $this->user_password = $password;
-    $this->getUsername();
-    if(!empty($this->user)) {
-      if(password_verify($this->user_password, $this->user['user_hash'])) {
-        $this->login();
+  public function login() {
+    $user = $this->getUser();
+    // echo("<script>console.log('$user');</script>");
+    if(!empty($user)) {
+      if(password_verify($this->data['password'], $user['user_hash'])) {
+        $this->runLoginSession($user);
       } else {
-        $this->errors['login_password'] = "Password fail!";
+        $this->addError('login_password', "Password fail!");
       }
     } else {
-      $this->errors['login_username'] = "This username does not exist!";
+      $this->addError('login_username', "This username does not exist!");
     }
   }
-  public function login() {
-    $_SESSION['user_id'] = $this->user['ID'];
-    $_SESSION['user_name'] = $this->user['user_name'];
+
+  private function runLoginSession($user) {
+    $_SESSION['user_id'] = $user['ID'];
+    $_SESSION['user_name'] = $user['user_name'];
     $_SESSION['loggedin'] = true;
-    header("Location: pollgenz-php");
+    // header("Location: pollgenz-php");
   }
 
   public function checkNewUser() {
@@ -67,7 +75,7 @@ class User {
     $stmt->execute();
     if($stmt->affected_rows == 1) {
       $this->user_id = $stmt->insert_id;
-      $this->getUsername();
+      $this->getUser();
       $this->login();
     }
   }

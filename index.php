@@ -36,7 +36,7 @@ else {
     http_response_code(404);
 
     echo "Not found page";
-
+    // echo basename($_SERVER['REQUEST_URI']);
     die();
 }
 

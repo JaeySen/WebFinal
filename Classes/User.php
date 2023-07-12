@@ -8,7 +8,7 @@ class User {
   public $user_hash;
   public $user_password;
   public $conn;
-  public $user = [];
+  private $user = [];
   public $users = [];
   public $errors = [];
 
@@ -28,32 +28,30 @@ class User {
     $stmt = $this->conn->prepare($sql);
     $stmt->bind_param("s", $this->data['username']);
     $stmt->execute();
-    $results = $stmt->get_result();
-    if($results->num_rows == 1) {
-      // $this->user = $results->fetch_assoc();
-      return $results->fetch_assoc();
+    $result = $stmt->get_result();
+    
+    if($result->num_rows == 1) {
+      return $result->fetch_assoc();
     }
   }
 
   public function login() {
-    $user = $this->getUser();
-    // echo("<script>console.log('$user');</script>");
-    if(!empty($user)) {
-      if(password_verify($this->data['password'], $user['user_hash'])) {
-        $this->runLoginSession($user);
-      } else {
+    $this->user = $this->getUser();
+    if(!empty($this->user)) {
+      if(!password_verify($this->data['password'], $this->user['user_hash'])) {
         $this->addError('login_password', "Password fail!");
-      }
+      } 
     } else {
       $this->addError('login_username', "This username does not exist!");
     }
+    return $this->errors;
   }
 
-  private function runLoginSession($user) {
-    $_SESSION['user_id'] = $user['ID'];
-    $_SESSION['user_name'] = $user['user_name'];
+  public function runLoginSession($user) {
+    $_SESSION['user_id'] = $user->user['ID'];
+    $_SESSION['user_name'] = $user->user['user_name'];
     $_SESSION['loggedin'] = true;
-    // header("Location: pollgenz-php");
+    header("Location: /pollgenz-php");
   }
 
   public function checkNewUser() {

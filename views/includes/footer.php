@@ -53,6 +53,7 @@
 
     <?php if ($heading == 'Home'){ echo '<script type="text/javascript" src="js/main.js"></script>'; }?>
     <?php if ($heading == 'Random'){ echo '<script type="text/javascript" src="js/random.js"></script>'; }?>
+    <?php if ($heading == 'Login'){ echo '<script type="text/javascript" src="js/authentication.js"></script>'; }?>
 
   </body>
 </html>

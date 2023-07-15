@@ -4,7 +4,7 @@ class Validator {
     public $errors = [];
 
     private $data;
-    private static $fields = ['username', 'email', 'password', 'confirm-password'];
+    private static $fields = ['username', 'email', 'password', 'password-confirm'];
     private static $login_fields = ['username', 'password'];
 
     public function __construct($post_data) {
@@ -47,11 +47,11 @@ class Validator {
             $val = trim($this->data['username']);
 
             if (empty($val)) {
-                $this->addError('username', 'username cannot be empty');
+                $this->addError('username', 'Username cannot be empty');
             }
             else {
                 if (!preg_match('/^[a-zA-Z0-9]{6,20}$/', $val)) {
-                    $this->addError('username', 'username must be between 6-20 chars & alphanumeric');
+                    $this->addError('username', 'Username must be between 6-20 chars & alphanumeric');
                 }
             }
         }
@@ -62,25 +62,34 @@ class Validator {
         $val = trim($this->data['email']);
 
         if (empty($val)) {
-            $this->addError('email', 'email cannot be empty');
+            $this->addError('email', 'Email cannot be empty');
         }
         else {
             if (!filter_var($val, FILTER_VALIDATE_EMAIL)) {
-            $this->addError('email', 'email must be a valid email');
+                $this->addError('email', 'Email must be a valid email');
             }
         }
     }
 
     private function validatePasswords() {
-        if (!isset($this->errors['password'])){
+        if (!isset($this->errors['password']) && !isset($this->errors['password-confirm'])){
             $val = trim($this->data['password']);
 
             if (empty($val)) {
-                $this->addError('password', 'password cannot be empty');
-            }
+                $this->addError('password', 'Password cannot be empty');
+            } 
             else {
                 if (!preg_match('/^[a-zA-Z0-9]{6,20}$/', $val)) {
-                    $this->addError('password', 'password must be between 6-20 chars & alphanumeric');
+                    $this->addError('password', 'Password must be between 6-20 chars & alphanumeric');
+                }
+            }
+            $confirm_password = trim($this->data['password-confirm']);
+
+            if (empty($confirm_password)) {
+                $this->addError('password-confirm', 'Confirm password cannot be empty');
+            } else {
+                if ($confirm_password !== $val) {
+                    $this->addError('password-confirm', 'Confirm password not match');
                 }
             }
         }

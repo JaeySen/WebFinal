@@ -3,7 +3,7 @@
   <div class="container-form p-4" id="form">
     <div class="flipper">
       <div class="front">
-        <form>
+        <form id="poll-form">
           <div class="form-group">
             <input type="text" class="form-control" id="question" placeholder="Type your question here">
           </div>
@@ -26,7 +26,7 @@
 
         <div class="container pt-3 px-0 d-flex justify-content-between">
           <a class="btn shiny grow btn-custom-red" id="more" href="#" role="button">More answer</a>
-          <button type="submit" class="btn submit shiny grow">Create poll</button>
+          <button type="submit" class="btn submit shiny grow" disabled>Create poll</button>
         </div>
       </div>
 

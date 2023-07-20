@@ -3,7 +3,19 @@ let submit = document.querySelector(".btn.submit");
 var i = 4;
 let data = [];
 
+let form = document.querySelector("#poll-form")
+
+let answer_fields = [...document.querySelectorAll(".form-control")].filter(field => field.id !== '')
+
 document.addEventListener("DOMContentLoaded", function(e) {
+
+	for (const field of answer_fields) {
+		field.addEventListener("blur", (e) => {
+			if (checkMinimumInputs()) {
+				submit.removeAttribute('disabled');
+			}
+		})
+	}
 
 	more.addEventListener("click", function (e) {
 		e.preventDefault();
@@ -15,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			"<input type='text' class='form-control' id='answer" +
 			i +
 			"'>";
-		console.log("now u have " + i + " option");
 		let where = document.querySelector("div.poll-answers");
 		where.append(newinput);
 	});
@@ -73,6 +84,16 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	})
 })
 
+function checkMinimumInputs() {
+	let count = 0;
+	let isQuestionFilled = false;
+	for (const field of answer_fields) {
+		if (field.id === 'question' && field.value) isQuestionFilled = true;
+		if (field.value) count += 1;
+	}
+	return count > 2 && isQuestionFilled; 
+}
+
 
 function presentPoll() {
     location.assign("random");
@@ -84,6 +105,17 @@ function presentPoll() {
 	// 		answers[k].style.visibility = 'visible';
 	// 	};
 	// }
+
+	// check question not empty
+	let question =  document.querySelector("#question").value;
+	// if (!question) {
+		
+	// } else {
+		
+	// }
+	
+
+	// all check passed, present 
 	data.push(document.querySelector("#question").value);
 	for (var j = 1; j <= i; j++) {
 		data.push(document.querySelector("#answer" + j).value);

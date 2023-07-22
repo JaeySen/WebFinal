@@ -1,11 +1,14 @@
 body {
-	overflow: initial !important;
+	/* overflow: initial !important; */
 	font-family: 'Grandstander', cursive;
 }
 
 #banner {
 	padding-top: 18vh !important;
 	margin-bottom: 0;
+	background: #198754;
+    min-height: 80vh;
+    padding: 10vh;
 }
 
 #banner > .display-4 {
@@ -67,8 +70,8 @@ body {
 	width: auto;
 }
 
-.nav-item.active {
-	text-decoration: underline;
+a.nav-item {
+	text-decoration: none !important;
 }
 
 .navbar li {
@@ -84,11 +87,6 @@ hr {
 	height:2px;
 }
 
-#banner {
-    background: #198754;
-    height: 80vh;
-    padding: 10vh;
-}
 
 .container .fab {
 	font-size: 3rem;

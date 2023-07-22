@@ -43,11 +43,14 @@
           </div>
         </div>
 
-        <div class="container pt-3 pl-3">          
-          <div class="row align-self-end justify-content-between">
-            <a class="btn shiny grow btn-custom-red" onclick="presentPoll()" role="button">See Poll</a>
-            <a class="btn submit flip-back shiny grow" id="reset" href="#" role="button">New poll</a>
+        <div class="container d-flex justify-content-between px-0 mt-2">          
+          <div class="col-6 pl-0 pr-3">
+            <a class="btn shiny btn-custom-red custom-lg" onclick="presentPoll()" role="button"><i class="fa fa-bars" aria-hidden="true"></i>See Poll</a>
           </div>
+          <div class="col-6">
+            <a class="btn shiny submit flip-back custom-lg" id="reset" href="#" role="button">New poll</a>
+          </div>
+
         </div>
 
       </div>

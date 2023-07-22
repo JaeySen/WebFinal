@@ -70,6 +70,13 @@ hr {
 	visibility: hidden;
 }
 
+.custom-lg{ 
+	height: 115%;
+	width: 110%;
+	line-height: 30vh;
+}
+
+
 /* .answers-zone {
 	overflow: visible;
 } */

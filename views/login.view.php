@@ -35,7 +35,7 @@ if(isset($_POST['create'])) {
   <div class="container-form flipper">
 
     <div class="row p-4">
-      <div class="col-md-6 front">
+      <div class="col-xl-6 front">
         <h3><i class="fa fa-plus"></i> Create Account</h3>
         <form class="form-create" action="" method="post">
           <!-- <label for="username">Username</label> -->
@@ -59,7 +59,7 @@ if(isset($_POST['create'])) {
           
         </form>
       </div>
-      <div class="col-md-6">
+      <div class="col-xl-6 col-lg-12">
         <h3><i class="fa fa-user"></i> Login</h3>
         <form class="" action="" method="post">
           <input type="text" name="login-username" class="form-control" placeholder="Username">
@@ -71,6 +71,11 @@ if(isset($_POST['create'])) {
           <button type="submit" name="login" class="btn btn-block btn-success"><i class="fa fa-user"></i> Login</button>
           <a href="" class="pt-2">Forgotten passoword? </a>
         </form>
+
+        <div class="create-button">
+          <hr>
+          <button type="" name="" class="btn btn-block btn-outline-success"><i class="fa fa-user-plus" aria-hidden="true"></i> Create Account </button>
+        </div>
       </div>
     </div>
   </div>

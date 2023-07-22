@@ -1,5 +1,5 @@
 <div id="banner" class="jumbotron-fluid text-center">
-  <div class="display-4 mb-4">Choose a trending poll !</div>
+  <div class="display-4 mb-4">Trending polls !</div>
   <div class="container">
     <div class="card-columns">
       <div class="card border border-secondary">

@@ -70,42 +70,80 @@ const static_polls = [
       }
     }
   }
-  
+  /// get bunch of random polls at DOMLoaded, fetch
+  var polls = [];
+
+
+ console.log(polls);
+
+ function getRandomPolls() {
+  return $.ajax({
+    type : 'GET', // type of the HTTP request
+    url : '../pollgenz-php/Handlers/PollHandler.php', // your php file
+    dataType: "text",
+    data: {'polls': '2'},
+    async: false,
+    success: handleRandomPolls
+  });
+ }
   
   // exec();
   let question = document.getElementById("question");
   let answer = [...document.getElementsByClassName("poll-answer")];
   var pollData = JSON.parse(localStorage.getItem("data")); 
-  document.addEventListener("DOMContentLoaded", function () {
-    let poll = {}
-    if (!pollData) {
-      poll = static_polls[Math.floor(Math.random() * static_polls.length)]
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   let poll = {}
+  //   if (!pollData) {
+  //     poll = static_polls[Math.floor(Math.random() * static_polls.length)]
 
-    } else {
-      let answer = pollData.toSpliced(0, 1)
-      poll = {
-        question: pollData[0],
-        answer: answer
-      }
-    }
-    question.value = poll.question;
-    for (let [key, value] of Object.entries(answer)) {
-      value.innerHTML = poll.answer[key]
-    }
-
-  })
-
-  
-  // let where = document.getElementsByClassName("ttt");
-  // document.addEventListener("DOMContentLoaded",function(){
-  //   for(let i= 0; i<init.length; i++) {
-  //     let txt = document.createTextNode(`${init[i][0]}`);
-  //     where[i].appendChild(txt);
+  //   } else {
+  //     let answer = pollData.toSpliced(0, 1)
+  //     poll = {
+  //       question: pollData[0],
+  //       answer: answer
+  //     }
   //   }
-  
+  //   question.value = poll.question;
+  //   for (let [key, value] of Object.entries(answer)) {
+  //     value.innerHTML = poll.answer[key]
+  //   }
+
   // })
-  
-  // let llink = document.querySelectorAll('.display-2.text-center');
+
+  $.ajax({
+    type : 'GET', // type of the HTTP request
+    url : '../pollgenz-php/Handlers/PollHandler.php', // your php file
+    dataType: "text",
+    data: {'polls': '2'},
+    async: false,
+    success : function (data){
+      while (data.indexOf('{') > -1) {
+        let subs = data.substring(data.indexOf('{'), data.indexOf('}') + 1);
+        polls.push(JSON.parse(subs));
+        // console.log(JSON.parse(subs));
+        //  console.log(obj.options.split('||||'));
+        data = data.replace(subs, '');
+      }
+      
+    }
+ });
+
+let poll = {};
+if (!pollData) {
+  poll = polls[Math.floor(Math.random() * polls.length)]
+  poll.answer = poll.options.split('||||');
+
+} else {
+  let answer = pollData.toSpliced(0, 1)
+  poll = {
+    question: pollData[0],
+    answer: answer
+  }
+}
+question.value = poll.question;
+for (let [key, value] of Object.entries(answer)) {
+  value.innerHTML = poll.answer[key]
+}
 
 const options = document.querySelectorAll("label");
 for (let i = 0; i < options.length; i++) {

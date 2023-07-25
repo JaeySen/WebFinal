@@ -5,6 +5,7 @@ include "db/db.php";
 
 if(isset($_POST['login'])) {
   $validator = new Validator($_POST);
+  // echo "<script>console.log('" . json_encode($data) . "');</script>";
   $errors = $validator->validateLoginForm(); 
   if (!$errors) {
     $user = new User($conn, $_POST);
@@ -62,11 +63,11 @@ if(isset($_POST['create'])) {
       <div class="col-xl-6 col-lg-12">
         <h3><i class="fa fa-user"></i> Login</h3>
         <form class="" action="" method="post">
-          <input type="text" name="login-username" class="form-control" placeholder="Username">
-          <p class="error error-username"> <?php if(isset($_POST['login'])) {echo $errors['username'];} ?></p>
+          <input type="text" name="username" class="form-control" placeholder="Username">
+          <p class="error error-username"> <?php if(isset($_POST['login'])) {echo $errors['username'] ?? '';} ?></p>
           
           <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="on">
-          <p class="error error-password"> <?php if(isset($_POST['login'])){ echo $errors['password']; }?></p>
+          <p class="error error-password"> <?php if(isset($_POST['login'])){ echo $errors['password'] ?? ''; }?></p>
 
           <button type="submit" name="login" class="btn btn-block btn-success"><i class="fa fa-user"></i> Login</button>
           <a href="" class="pt-2">Forgotten passoword? </a>

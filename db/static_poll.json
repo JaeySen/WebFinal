@@ -1,0 +1,14 @@
+{
+    "poll": [
+        {
+            "id": 1,
+            "question": "best programming language",
+            "answers": ["html", "css", "js", "php"]
+        },
+        {
+            "id": 2,
+            "question": "worst programming language",
+            "answers": ["htmx", "c", "go", "rust"]
+        }
+    ]
+}

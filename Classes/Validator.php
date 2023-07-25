@@ -15,7 +15,7 @@ class Validator {
         $this->checkFieldsPresence(self::$login_fields);
 
         $this->validateUsername();
-        $this->validatePasswords();
+        $this->validatePasswords('login');
     
         return $this->errors;
     
@@ -26,7 +26,7 @@ class Validator {
 
         $this->validateUsername();
         $this->validateEmail();
-        $this->validatePasswords();
+        $this->validatePasswords('create');
 
         return $this->errors;
     }
@@ -71,30 +71,26 @@ class Validator {
         }
     }
 
-    private function validatePasswords() {
-        if (!isset($this->errors['password']) && !isset($this->errors['password-confirm'])){
-            $val = trim($this->data['password']);
-
-            if (empty($val)) {
-                $this->addError('password', 'Password cannot be empty');
-            } 
-            else {
-                if (!preg_match('/^[a-zA-Z0-9]{6,20}$/', $val)) {
-                    $this->addError('password', 'Password must be between 6-20 chars & alphanumeric');
-                }
-            }
-            $confirm_password = trim($this->data['password-confirm']);
-
-            if (empty($confirm_password)) {
-                $this->addError('password-confirm', 'Confirm password cannot be empty');
-            } else {
-                if ($confirm_password !== $val) {
-                    $this->addError('password-confirm', 'Confirm password not match');
-                }
+    private function validatePasswords($http_method) {
+        $val = trim($this->data['password']);
+        if (empty($val)) {
+            $this->addError('password', 'Password cannot be empty');
+        } 
+        else {
+            if (!preg_match('/^[a-zA-Z0-9]{6,20}$/', $val)) {
+                $this->addError('password', 'Password must be between 6-20 chars & alphanumeric');
             }
         }
-        return; 
-
+        if ($http_method === 'login') {
+            return; 
+        }
+        else {
+            $confirm_password = trim($this->data['password-confirm']);
+            if ($confirm_password !== $val) {
+                $this->addError('password-confirm', 'Confirm password not match');
+            }
+            return; 
+        }
     }
 
     private function addError($key, $val) {

@@ -1,16 +1,17 @@
 <?php 
 class Poll {
-    public $quiz;
-    private $id;
-    public $pells = [];
+    private $conn;
 
-
-    function set_quiz($quiz){
-        $this->quiz = $quiz;
+    public function __construct($conn) {
+        $this->conn = $conn;
     }
 
-    function get_quiz(){
-        return $this->quiz;
+    public function getPolls() {
+        $sql = "SELECT * FROM polls";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        // $result = $stmt->get_result();
+        return $stmt->get_result();
     }
 }
 

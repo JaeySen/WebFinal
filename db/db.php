@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pw = "";
-$db = "final2021";
+$db = "pollgenz";
 
 $conn = new mysqli($host, $user, $pw, $db);
  ?>

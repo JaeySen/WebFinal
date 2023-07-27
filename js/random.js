@@ -9,17 +9,6 @@ const static_polls = [
     answer: ['yes', 'no', 'yes but no', 'no but yes']
   }
 ]
-
-// const static_polls_1 = [
-//   [
-//     question: 'Are you gay?',
-//     answer: ['yes', 'no', 'yes but no', 'no but yes']
-//   ],
-//   [
-//     question: 'Are you les?',
-//     answer: ['yes', 'no', 'yes but no', 'no but yes']
-//   ]
-// ]
   // document.body.style.overflow = "hidden";
   //Get the button:
   // mybutton = document.getElementById("myBtn");
@@ -62,53 +51,22 @@ const static_polls = [
   
   //init polls in
   
-  function exec() {
-    for (var i = 0; i < init.length; i++) {
-      if (this.innerHTML = init[i][0]){
-        console.log(this.innerHTML);
-        localStorage.setItem("array",JSON.stringify(init[i]));
-      }
-    }
-  }
-  /// get bunch of random polls at DOMLoaded, fetch
   var polls = [];
 
-
- console.log(polls);
-
- function getRandomPolls() {
-  return $.ajax({
-    type : 'GET', // type of the HTTP request
-    url : '../pollgenz-php/Handlers/PollHandler.php', // your php file
-    dataType: "text",
-    data: {'polls': '2'},
-    async: false,
-    success: handleRandomPolls
-  });
- }
+  // function getRandomPolls() {
+  //   return $.ajax({
+  //     type : 'GET', // type of the HTTP request
+  //     url : '../pollgenz-php/Handlers/PollHandler.php', // your php file
+  //     dataType: "text",
+  //     data: {'polls': '2'},
+  //     async: false,
+  //     success: handleRandomPolls
+  //   });
+  // }
   
-  // exec();
-  let question = document.getElementById("question");
-  let answer = [...document.getElementsByClassName("poll-answer")];
+  let questionField = document.getElementById("question");
+  let answerFields = [...document.getElementsByClassName("poll-answer")];
   var pollData = JSON.parse(localStorage.getItem("data")); 
-  // document.addEventListener("DOMContentLoaded", function () {
-  //   let poll = {}
-  //   if (!pollData) {
-  //     poll = static_polls[Math.floor(Math.random() * static_polls.length)]
-
-  //   } else {
-  //     let answer = pollData.toSpliced(0, 1)
-  //     poll = {
-  //       question: pollData[0],
-  //       answer: answer
-  //     }
-  //   }
-  //   question.value = poll.question;
-  //   for (let [key, value] of Object.entries(answer)) {
-  //     value.innerHTML = poll.answer[key]
-  //   }
-
-  // })
 
   $.ajax({
     type : 'GET', // type of the HTTP request
@@ -120,30 +78,27 @@ const static_polls = [
       while (data.indexOf('{') > -1) {
         let subs = data.substring(data.indexOf('{'), data.indexOf('}') + 1);
         polls.push(JSON.parse(subs));
-        // console.log(JSON.parse(subs));
-        //  console.log(obj.options.split('||||'));
         data = data.replace(subs, '');
       }
-      
     }
  });
 
-let poll = {};
-if (!pollData) {
-  poll = polls[Math.floor(Math.random() * polls.length)]
-  poll.answer = poll.options.split('||||');
+  let poll = {};
+  if (!pollData) {
+    poll = polls[Math.floor(Math.random() * polls.length)]
+    poll.answer = poll.options.split('||||');
 
-} else {
-  let answer = pollData.toSpliced(0, 1)
-  poll = {
-    question: pollData[0],
-    answer: answer
+  } else {
+    let answer = pollData.toSpliced(0, 1);
+    poll = {
+      question: pollData[0],
+      answer: answer
+    }
   }
-}
-question.value = poll.question;
-for (let [key, value] of Object.entries(answer)) {
-  value.innerHTML = poll.answer[key]
-}
+  questionField.value = poll.question;
+  for (let [key, value] of Object.entries(answerFields)) {
+    value.innerHTML = poll.answer[key]
+  }
 
 const options = document.querySelectorAll("label");
 for (let i = 0; i < options.length; i++) {

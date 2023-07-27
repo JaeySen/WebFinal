@@ -7,12 +7,12 @@ window.onscroll = function () {
 };
 let spinner = document.querySelector("#spinner");
 
-document.addEventListener("DOMContentLoaded",function(){
-  spinner.style.display = "none";
-  setTimeout(function(){
-    spinner.style.display = "block";
-  },3000);
-})
+// document.addEventListener("DOMContentLoaded",function(){
+//   spinner.style.display = "none";
+//   setTimeout(function(){
+//     spinner.style.display = "block";
+//   },3000);
+// })
 function scrollFunction() {
 	if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
 		mybutton.style.display = "block";
@@ -45,3 +45,35 @@ $(document).ready(function () {
 		},
 	});
 });
+// fetch and display 
+var polls = [];
+
+$.ajax({
+    type : 'GET', // type of the HTTP request
+    url : '../pollgenz-php/Handlers/PollHandler.php', // your php file
+    dataType: "text",
+    data: {'polls': '2'},
+    async: false,
+    success : function (data){
+      while (data.indexOf('{') > -1) {
+        let subs = data.substring(data.indexOf('{'), data.indexOf('}') + 1);
+        polls.push(JSON.parse(subs));
+        data = data.replace(subs, '');
+      }
+    }
+ });
+
+ let pollTemplate = document.getElementById("poll-card");
+
+ let cardColumns = document.querySelector(".card-columns");
+
+for (const poll of polls) {
+	let tempContent = pollTemplate.content.cloneNode(true);
+	let titleField = tempContent.querySelector(".card-title");
+	titleField.innerHTML = poll.question;
+	cardColumns.appendChild(tempContent);
+	// console.log(titleField);
+	// console.log(tempContent);
+}
+
+ 

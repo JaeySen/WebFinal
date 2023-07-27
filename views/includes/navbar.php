@@ -1,7 +1,3 @@
-<?php 
-  $current_pg = basename($_SERVER['REQUEST_URI']);
-?>
-
 <body>
   <header class="fixed-top w-100">    
     <nav class="navbar navbar-expand-md navbar-light bg-orange">

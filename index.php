@@ -3,18 +3,18 @@
 require 'functions.php';
 
 $root = '/pollgenz-php';
-
+// echo "<script>console.log('". $_SERVER['REQUEST_URI'] . "')</script>";
 $to_route =
 [
     'pollgenz-php' => '/',
-    'index.php' => '/',
     'latest' => 'latest',
     'trending' => 'trending',
     'random' => 'random',
     'login' => 'login'
 ];
 
-$uri = $to_route[basename($_SERVER['REQUEST_URI'])];
+$current_pg = basename($_SERVER['REQUEST_URI']);
+$uri = $to_route[$current_pg];
 
 $routes = 
 [
@@ -39,5 +39,3 @@ else {
     // echo basename($_SERVER['REQUEST_URI']);
     die();
 }
-
-// include "views/includes/footer.php";

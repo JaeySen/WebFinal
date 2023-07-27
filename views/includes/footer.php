@@ -5,9 +5,9 @@
           <div class="row py-4 d-flex align-items-center">
 
             <div class="col-md-12 text-center">
-              <a href="#"><i class="fab fa-facebook-f mr-4 text-dark grow"></i></a>
-              <a href="#"><i class="fab fa-twitter mr-4 text-dark grow"></i></a>
-              <a href="#"><i class="fab fa-instagram mr-4 text-dark grow"></i></a>
+                <a href="https://github.com/JaeySen/pollgenz-php"><i class="fab fa-github mr-4 text-dark grow"></i></a>
+                <!-- <a href="#"><i class="fas fa-at fa-lg mr-4 text-dark grow"></i></a> -->
+                <a href="www.linkedin.com/in/long-tran-ngoc-hien-a06016195"><i class="fab fa-linkedin mr-4 text-dark grow"></i></a>
             </div>
           </div>
         </div>
@@ -27,9 +27,14 @@
             <h6 class="text-uppercase font-weight-bold ">About Us</h6>
             <hr class="bg-success mb-4 mt-0 d-inline-block mx-auto" style="width:150px;height:2px;">
             <ul class="list-inline">
-              <li class="list-inline-item">Hien Long</li>
-              <li class="list-inline-item">Anh Thu</li>
-              <li class="list-inline-item">Minh Quang</li>
+              <li class="list-inline-item">Tran Ngoc Hien Long</li>
+              <li class="list-inline-item">Phone: (+84) 888-006-798</li>
+              <li class="list-inline-item">Email: longhientranjjj@gmail.com</li>
+
+              <!-- <li class="list-inline-item"><a href="www.linkedin.com/in/long-tran-ngoc-hien-a06016195">Linkedin </a></li> -->
+              <!-- <li class="list-inline-item"><a href="https://github.com/JaeySen/pollgenz-php">Github </a></li> -->
+              <!-- <li class="list-inline-item">Anh Thu</li>
+              <li class="list-inline-item">Minh Quang</li> -->
             </ul>
           </div>
         </div>
@@ -56,6 +61,7 @@
     <?php if ($heading == 'Home'){ echo '<script type="text/javascript" src="js/main.js"></script>'; }?>
     <?php if ($heading == 'Random'){ echo '<script type="text/javascript" src="js/random.js"></script>'; }?>
     <?php if ($heading == 'Login'){ echo '<script type="text/javascript" src="js/authentication.js"></script>'; }?>
+    <?php if ($heading == 'Trending'){ echo '<script type="text/javascript" src="js/trending.js"></script>'; }?>
 
   </body>
 </html>

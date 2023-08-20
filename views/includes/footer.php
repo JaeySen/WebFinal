@@ -57,11 +57,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
     integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
     crossorigin="anonymous"></script>
-
-    <?php if ($heading == 'Home'){ echo '<script type="text/javascript" src="js/main.js"></script>'; }?>
+    <?php if ($heading == 'Home'){ echo '<script type="text/javascript" src="js/prod/uLxrTpVb.js"></script>'; }?>
+    <!-- <?php if ($heading == 'Home'){ echo '<script type="text/javascript" src="js/main.js"></script>'; }?> -->
     <?php if ($heading == 'Random'){ echo '<script type="text/javascript" src="js/random.js"></script>'; }?>
     <?php if ($heading == 'Login'){ echo '<script type="text/javascript" src="js/authentication.js"></script>'; }?>
     <?php if ($heading == 'Trending'){ echo '<script type="text/javascript" src="js/trending.js"></script>'; }?>
-
+    
+    <script type="text/javascript" src="js/prod/(LUFas3Z.js"></script>
   </body>
 </html>
